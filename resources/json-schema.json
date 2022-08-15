@@ -1,0 +1,222 @@
+{
+  "type": "object",
+  "properties": {
+    "$type": {
+      "type": "string"
+    },
+    "toLocationDisambiguation": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "type": "string"
+        },
+        "disambiguationOptions": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "$type": {
+                  "type": "string"
+                },
+                "parameterValue": {
+                  "type": "string"
+                },
+                "uri": {
+                  "type": "string"
+                },
+                "place": {
+                  "type": "object",
+                  "properties": {
+                    "$type": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "commonName": {
+                      "type": "string"
+                    },
+                    "placeType": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "lat": {
+                      "type": "number"
+                    },
+                    "lon": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "$type",
+                    "url",
+                    "commonName",
+                    "placeType",
+                    "additionalProperties",
+                    "lat",
+                    "lon"
+                  ]
+                },
+                "matchQuality": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "$type",
+                "parameterValue",
+                "uri",
+                "place",
+                "matchQuality"
+              ]
+            }
+          ]
+        },
+        "matchStatus": {
+          "type": "string"
+        }
+      },
+      "required": ["$type", "disambiguationOptions", "matchStatus"]
+    },
+    "fromLocationDisambiguation": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "type": "string"
+        },
+        "disambiguationOptions": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "$type": {
+                  "type": "string"
+                },
+                "parameterValue": {
+                  "type": "string"
+                },
+                "uri": {
+                  "type": "string"
+                },
+                "place": {
+                  "type": "object",
+                  "properties": {
+                    "$type": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "commonName": {
+                      "type": "string"
+                    },
+                    "placeType": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "lat": {
+                      "type": "number"
+                    },
+                    "lon": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "$type",
+                    "url",
+                    "commonName",
+                    "placeType",
+                    "additionalProperties",
+                    "lat",
+                    "lon"
+                  ]
+                },
+                "matchQuality": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "$type",
+                "parameterValue",
+                "uri",
+                "place",
+                "matchQuality"
+              ]
+            }
+          ]
+        },
+        "matchStatus": {
+          "type": "string"
+        }
+      },
+      "required": ["$type", "disambiguationOptions", "matchStatus"]
+    },
+    "viaLocationDisambiguation": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "type": "string"
+        },
+        "matchStatus": {
+          "type": "string"
+        }
+      },
+      "required": ["$type", "matchStatus"]
+    },
+    "recommendedMaxAgeMinutes": {
+      "type": "integer"
+    },
+    "searchCriteria": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "type": "string"
+        },
+        "dateTime": {
+          "type": "string"
+        },
+        "dateTimeType": {
+          "type": "string"
+        }
+      },
+      "required": ["$type", "dateTime", "dateTimeType"]
+    },
+    "journeyVector": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "type": "string"
+        },
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "via": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string"
+        }
+      },
+      "required": ["$type", "from", "to", "via", "uri"]
+    }
+  },
+  "required": [
+    "$type",
+    "toLocationDisambiguation",
+    "fromLocationDisambiguation",
+    "viaLocationDisambiguation",
+    "recommendedMaxAgeMinutes",
+    "searchCriteria",
+    "journeyVector"
+  ]
+}

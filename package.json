@@ -1,0 +1,24 @@
+{
+  "name": "typescript-boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Vorobeyko <sashavorobey95@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "run:tests": "codeceptjs run",
+    "def": "codeceptjs def"
+  },
+  "dependencies": {
+    "codeceptjs": "^3.3.3",
+    "joi": "^17.6.0",
+    "json-joi-converter": "^17.2.1-f",
+    "playwright": "^1.23.2",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.1",
+    "codeceptjs-assert": "^0.0.5",
+    "node-config-ts": "^3.1.0"
+  }
+}

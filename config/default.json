@@ -1,0 +1,8 @@
+{
+  "baseUrl": "https://www.mediawiki.org/wiki/MediaWiki/",
+  "apiURL": "https://api.tfl.gov.uk/",
+  "admin": {
+    "username": "Hammadtest",
+    "password": "Test1234!"
+  }
+}

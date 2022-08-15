@@ -1,0 +1,45 @@
+name: Run E2E Tests
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Tag to run the tests with
+        default: regression
+        required: true
+      browser:
+        description: Browser you want to run the tests on (chromium, webkit, firefox)
+        default: chromium
+        required: true
+
+jobs:
+  Run-Tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install e2e dependencies (with retries)
+        run: npm ci || npm ci || npm ci
+
+      - name: Setup Playwright (add browser dependencies)
+        run: npx playwright install-deps $BROWSER
+
+      - name: Run the tests
+        id: e2e-tests
+        run: |
+          npx codeceptjs run --steps --grep @${{ env.TAG }} \
+          --override '{ "helpers": { "Playwright": { "browser": "${{ env.BROWSER }}" }}}'
+        env:
+          NODE_ENV: ${{ env.ENVIRONMENT }}
+          E2E_HEADLESS: true
+          E2E_MC_ORG: E2E MC
