@@ -25,7 +25,7 @@ Assumptions:
 
 This is a project which includes CodeceptJS + Playwright setup using TypeScript.
 
-I couldn't find token page so can't add those test.
+I couldn't find token page so can't add those test. We can also add test to verify, JSON schema from API test.
 
 There can be negative test-cases added, which I didn't on purpose as you can see they can be created as I'm using page-object pattern.
 
