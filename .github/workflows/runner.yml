@@ -40,5 +40,4 @@ jobs:
           npx codeceptjs run --steps --grep @${{ github.event.inputs.tag }} \
           --override '{ "helpers": { "Playwright": { "browser": "${{ github.event.inputs.browser }}" }}}'
         env:
-          E2E_HEADLESS: true
-          E2E_MC_ORG: E2E MC
+          HEADLESS: true
